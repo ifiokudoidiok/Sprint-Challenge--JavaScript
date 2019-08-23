@@ -96,9 +96,10 @@ console.log(contactInfo);
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 // console.log(uni);
-uni.push(graduates.filter((univ) => univ.university.indexOf('Uni') > -1));
+// uni.push(graduates.filter((univ) => univ.university.includes('Uni') > -1));
+graduates.filter((graduates) => graduates.university.includes('Uni') ? uni.push(graduates.university): null);
 // uni.push(students);
-console.log(`${uni.length} Universities has the term Uni included in their names`);
+// console.log(`${uni.length} Universities has the term Uni included in their names`);
 console.log(uni);
 
 
@@ -136,16 +137,16 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
-lowerCase.push(zooAnimals.map((name) => name.animal_name.toLowerCase()));
+// lowerCase.push(zooAnimals.map((name) => name.animal_name.toLowerCase()));
+zooAnimals.map(animal => lowerCase.push(animal.animal_name.toLowerCase()))
 console.log(lowerCase); 
-
 /* Request 3: .filter() 
 
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
 const lowerPopulation = [];
-lowerPopulation.push(zooAnimals.filter(lowpopulation => (lowpopulation.population < 10)));
+zooAnimals.filter(lowPopulation => (lowPopulation.population < 5) ? lowerPopulation.push(lowPopulation.animal_name): null);
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
@@ -153,8 +154,8 @@ console.log(lowerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.reduce((initial, populate) => {
-  return initial + populate.population;
+const populationTotal = zooAnimals.reduce((initial, total) => {
+  return initial + total.population;
 }, 0);
 // populationTotal = zooAnimals.reduce((initial, populate) => {
 //   return initial + populate.population;
