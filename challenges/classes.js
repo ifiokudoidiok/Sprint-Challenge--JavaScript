@@ -1,5 +1,5 @@
 // 1. Copy and paste your prototype in here and refactor into class syntax.
-            
+            //COPIED CODE
 /*
 function CuboidMakerOriginal(length, width, height){
     this.length = length;
@@ -19,6 +19,7 @@ function CuboidMakerOriginal(length, width, height){
   console.log(cuboidOriginal.surfaceArea());
   
  */
+            //REFACTORED CODE
 
   class CuboidMakerRefactored {
     constructor(length, width, height){
