@@ -30,22 +30,44 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+map() allocates memory and stores return values. forEach() throws away return values and always returns undefined . forEach() will allow a callback function to mutate the current array. map() will instead return a new array.
+
 2. What is the difference between a function and a method?
+
+In my own opinion a method is a function that belongs to a class. TO explain further, It's semantics and has to do with what you are trying to express.
+In javascript every function is an object. An object is a collection of key:value pairs. If a value is a primitive (number, string, boolean), or another object, the value is considered a property. If a value is a function, it is called a 'method'. Within the scope of an object, a function is referred to as a method of that object.
 
 3. What is closure?
 
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
 4. Describe the four rules of the 'this' keyword.
 
+    (a) this - window/undefined object binding
+        here this is accessing the window object and as such it is global and had access to all the methods of the Window object.It is usually not confined in the body of any object, it can be found in what we may refer to as TOPLEVELVARIABLES; Variables which have a global scope
+
+    (b) this - implicit binding
+        In this case, "this" refers to the object that it is in. 
+
+    (c) this - new keyword binding
+        Here, this refers to the object that is being created
+
+    (d) this - explicit binding
+        Here the value of this is set to a particular value when the function is called or applied.
+
+
 5. Why do we need super() in an extended class?
+
+    Super in the extended class helps bring in all the properties in the constructor of the parent class into the subclass
 
 ## Project Set up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add PM as collaborator on Github.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 - [ ] You are now ready to build this project with your preferred IDE
 - [ ] Implement the project on your Branch, committing changes regularly.
